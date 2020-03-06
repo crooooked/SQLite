@@ -81,6 +81,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="180dp"
+        android:text="                              ----------------\n                           --no records--\n                              ----------------"
         ></TextView>
     <Button
         android:id="@+id/btn_write"

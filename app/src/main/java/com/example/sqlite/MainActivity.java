@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 db=myHelper.getWritableDatabase();
                 db.delete("info",null,null);
                 Toast.makeText(this,"删除成功",Toast.LENGTH_SHORT).show();
-                tvshow.setText("");
+                tvshow.setText("\"                              ----------------\\n                           --no records--\\n                              ----------------\"");
                 db.close();
             case R.id.btn_update:
                 db=myHelper.getWritableDatabase();
@@ -72,14 +72,15 @@ public class MainActivity extends AppCompatActivity {
                 db=myHelper.getWritableDatabase();
                 Cursor cursor=db.query("info",null,null,null,null,null,null,null);
                 if(cursor.getCount()==0){
+                    tvshow.setText("                              ----------------\n                           --no records--\n                              ----------------");
                     Toast.makeText(this,"没有数据",Toast.LENGTH_SHORT).show();
                 }
                 else{
                     cursor.moveToFirst();
-                    tvshow.setText("姓名"+cursor.getString(1)+" 邮箱："+cursor.getString(2)+" 电话："+cursor.getString(3));
+                    tvshow.setText("姓名"+cursor.getString(1)+"\n邮箱："+cursor.getString(2)+"\n电话："+cursor.getString(3));
                 }
                 while(cursor.moveToNext()){
-                    tvshow.append("\n"+"姓名"+cursor.getString(1)+" 邮箱："+cursor.getString(2)+" 电话："+cursor.getString(3));
+                    tvshow.append("\n"+"姓名"+cursor.getString(1)+"\n邮箱："+cursor.getString(2)+"\n电话："+cursor.getString(3));
                 }
                 break;
         }
