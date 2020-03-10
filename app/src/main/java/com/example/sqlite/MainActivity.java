@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_update:
                 db=myHelper.getWritableDatabase();
                 values=new ContentValues();
-                values.put("name",etphone.getText().toString());
+                values.put("name",etname.getText().toString());
                 values.put("email",etemail.getText().toString());
                 db.update("info",values,"phone=?",new String[]{etphone.getText().toString()});
                 Toast.makeText(this,"更新成功",Toast.LENGTH_SHORT).show();
